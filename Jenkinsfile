@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Stage-1') { // Added name for the stage
             steps {
-                sh 'echo "Hello"'
-                sleep 10
+                sh 'echo "Good Morning"'
+                sleep 5
             }
         }
     }
