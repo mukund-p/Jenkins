@@ -97,4 +97,3 @@ It helps implement Continuous Integration and Continuous Delivery (CI/CD) in a p
 
 ---
 
-> 📄 This document is maintained by Mukund Patil.
