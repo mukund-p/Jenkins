@@ -16,84 +16,72 @@ A beginner-friendly guide to understanding and using Jenkins for Continuous Inte
 
 ## What is Jenkins?
 Jenkins is an open-source automation server used to automate parts of software development like building, testing, and deploying applications.  
-It helps implement Continuous Integration and Continuous Delivery (CI/CD) in a project.
+It helps implement Continuous Integration and Continuous Delivery (CI/CD) pipelines.
+
+![Jenkins Logo](https://www.jenkins.io/images/logos/jenkins/jenkins.png)
 
 ---
 
 ## Key Features of Jenkins
-> **Open Source**:  
+> **Open Source**  
 > Free to use with a large community.
 
-> **Extensible**:  
-> Supports over 1,800+ plugins for building, deploying, and automating.
+> **Extensible**  
+> Supports 1,800+ plugins for building, deploying, and automating.
 
-> **Distributed Builds**:  
-> Supports Master-Agent architecture to manage multiple builds.
+> **Distributed Builds**  
+> Supports Master-Agent architecture to manage multiple builds across different machines.
 
-> **Easy Installation**:  
-> Simple to install via `.war` file, Docker, or package manager.
+> **Easy Installation**  
+> Simple installation through `.war` files, Docker images, or package managers.
 
-> **Rich UI and APIs**:  
-> Provides a user-friendly web interface and REST APIs.
+> **Rich UI and REST APIs**  
+> Provides a web-based interface and APIs to manage Jenkins.
 
 ---
 
 ## Jenkins Architecture
-> **Master (Controller)**:  
-> Coordinates the tasks, schedules builds, and manages agents.
 
-> **Agent (Node/Slave)**:  
-> Machines that perform the actual build tasks as instructed by the master.
+Jenkins follows a **Master-Agent** architecture.
 
-> **Executor**:  
-> A slot for a job to run on an agent.
+![Jenkins Architecture](https://miro.medium.com/max/1400/1*TL5hGsFZkt9nJmw-H9DNMg.png)
+
+> **Master (Controller)**  
+> - Orchestrates the tasks  
+> - Schedules jobs, manages agents, monitors builds  
+
+> **Agent (Node/Slave)**  
+> - Executes the tasks assigned by the master  
+> - Helps in load balancing
 
 ---
 
 ## Basic Jenkins Terminology
 
-> **Job / Project**:  
-> A task like building code, running tests, or deploying.
+> **Job / Project**  
+> A task like building, testing, or deploying software.
 
-> **Build**:  
-> The actual running instance of a job.
+> **Build**  
+> A single run of a project.
 
-> **Pipeline**:  
-> A suite of steps to automate the software delivery process.
+> **Pipeline**  
+> A suite of plugins that supports integrating and implementing continuous delivery pipelines.
 
-> **Plugin**:  
-> An extension that adds functionality to Jenkins.
+> **Executor**  
+> A computational slot on an agent where a job runs.
 
-> **Workspace**:  
-> Directory where Jenkins keeps files related to a job.
+> **Plugin**  
+> A module that extends Jenkins' capabilities.
 
 ---
 
 ## Typical Jenkins Workflow
-1. **Developer pushes code** to a Version Control System (e.g., GitHub).
-2. **Jenkins detects changes** (polling or webhook).
-3. **Jenkins pulls the code** and performs the build.
-4. **Tests are executed** automatically.
-5. **Build artifacts** are generated and stored.
-6. **Deployment is triggered** to staging or production.
 
----
-
-## Best Practices
-> **Use Pipelines**:  
-> Prefer Pipeline-as-Code (`Jenkinsfile`) over freestyle jobs for better version control.
-
-> **Secure Jenkins**:  
-> Always configure user authentication, authorization, and install security plugins.
-
-> **Keep Jenkins Updated**:  
-> Regularly update Jenkins and plugins to get security patches and new features.
-
-> **Use Agents Efficiently**:  
-> Offload heavy build jobs to agents instead of running on the master.
-
-> **Monitor Jenkins Health**:  
-> Regularly backup your Jenkins server and monitor system performance.
-
----
-
+```plaintext
+1. Developer pushes code to Version Control (e.g., GitHub).
+2. Jenkins detects code changes (via webhook or polling).
+3. Jenkins pulls the latest code.
+4. Jenkins builds the application.
+5. Jenkins runs tests.
+6. Jenkins deploys the build to the server (if successful).
+7. Jenkins notifies the team (via email, Slack, etc.).
