@@ -11,6 +11,8 @@ A beginner-friendly guide to understanding and using Jenkins for Continuous Inte
 - [Basic Jenkins Terminology](#basic-jenkins-terminology)
 - [Typical Jenkins Workflow](#typical-jenkins-workflow)
 - [Best Practices](#best-practices)
+- [References](#references)
+- [License](#license)
 
 ---
 
@@ -20,7 +22,7 @@ Jenkins is an open-source automation server used to automate parts of software d
 It helps implement Continuous Integration and Continuous Delivery (CI/CD) pipelines.
 
 <p align="center">
-  <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins Logo" width="150" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/320px-Jenkins_logo.svg.png" alt="Jenkins Logo" width="150" />
 </p>
 
 ---
@@ -62,54 +64,64 @@ Jenkins follows a **Master-Agent** architecture.
 
 ## Basic Jenkins Terminology
 
-> **Job / Project**  
-> A task like building code, running tests, or deploying an application.
+> **Pipeline**  
+> A suite of plugins that supports integrating and implementing continuous delivery pipelines.
+
+> **Job**  
+> A task or step defined in Jenkins to perform specific operations like build, test, deploy.
 
 > **Build**  
-> The actual execution instance of a job.
-
-> **Pipeline**  
-> Defines the entire build, test, and deploy workflow as code.
+> The process of compiling source code into binary artifacts.
 
 > **Plugin**  
-> Extensions that add new features to Jenkins.
+> An extension that adds new functionality to Jenkins.
+
+> **Node**  
+> Any machine (including the Master) that is part of the Jenkins environment.
 
 > **Workspace**  
-> The directory where Jenkins stores files related to a job.
+> A directory where Jenkins stores files related to a specific build.
 
 ---
 
 ## Typical Jenkins Workflow
 
-1. Developer pushes code to a Git repository (GitHub, GitLab, Bitbucket).
-2. Jenkins detects the change via Webhooks or Poll SCM.
-3. Jenkins pulls the updated code.
-4. Jenkins builds the code.
-5. Jenkins runs tests.
-6. Jenkins deploys the build to a server or cloud.
+1. **Developer pushes code** to the Version Control System (e.g., GitHub).
+2. **Jenkins detects the change** using Webhooks or Polling.
+3. **Jenkins triggers a build** (compiling, testing, packaging).
+4. **Jenkins deploys** the application to servers or cloud environments.
+5. **Reports** are generated (build success, test results).
 
 ---
 
 ## Best Practices
 
 > **Use Pipelines as Code**  
-> Define pipelines in `Jenkinsfile` for better version control.
-
-> **Limit Plugins**  
-> Only use necessary plugins to keep Jenkins lightweight and secure.
+> Prefer using `Jenkinsfile` for defining build pipelines instead of configuring them manually.
 
 > **Secure Jenkins**  
-> Use authentication, authorization, and always configure security settings properly.
+> Always set up proper authentication and authorization.
 
-> **Use Backup and Restore Plugins**  
-> Regularly back up Jenkins configurations and jobs.
+> **Backup Regularly**  
+> Backup `JENKINS_HOME` and job configurations.
 
-> **Use Distributed Builds**  
-> Set up multiple agents to distribute the load and speed up builds.
+> **Use Fewer Plugins**  
+> Only install necessary plugins to reduce maintenance and security risks.
+
+> **Label Agents**  
+> Label nodes based on their capabilities to schedule jobs efficiently.
 
 ---
 
-## Useful Resources
+## References
+
 - [Official Jenkins Documentation](https://www.jenkins.io/doc/)
 - [Jenkins GitHub Repository](https://github.com/jenkinsci/jenkins)
-- [Jenkins Plugins Index](https://plugins.jenkins.io/)
+
+---
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
