@@ -20,7 +20,7 @@ Jenkins is an open-source automation server used to automate parts of software d
 It helps implement Continuous Integration and Continuous Delivery (CI/CD) pipelines.
 
 <p align="center">
-  <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins Logo" width="200" />
+  <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins Logo" width="150" />
 </p>
 
 ---
@@ -46,10 +46,6 @@ It helps implement Continuous Integration and Continuous Delivery (CI/CD) pipeli
 ## Jenkins Architecture
 
 Jenkins follows a **Master-Agent** architecture.
-
-<p align="center">
-  <img src="https://www.edureka.co/blog/wp-content/uploads/2019/07/Jenkins-Architecture-Jenkins-Edureka.png" alt="Jenkins Architecture" width="600" />
-</p>
 
 > **Master (Controller)**  
 > - Orchestrates the tasks.  
