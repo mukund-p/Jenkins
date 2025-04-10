@@ -1,4 +1,4 @@
-# Jenkins_Basics
+# Jenkins Basics
 
 A beginner-friendly guide to understanding and using Jenkins for Continuous Integration and Continuous Deployment (CI/CD).
 
@@ -15,10 +15,13 @@ A beginner-friendly guide to understanding and using Jenkins for Continuous Inte
 ---
 
 ## What is Jenkins?
+
 Jenkins is an open-source automation server used to automate parts of software development like building, testing, and deploying applications.  
 It helps implement Continuous Integration and Continuous Delivery (CI/CD) pipelines.
 
-![Jenkins Logo](https://www.jenkins.io/images/logos/jenkins/jenkins.png)
+<p align="center">
+  <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Jenkins Logo" width="200" />
+</p>
 
 ---
 
@@ -44,44 +47,73 @@ It helps implement Continuous Integration and Continuous Delivery (CI/CD) pipeli
 
 Jenkins follows a **Master-Agent** architecture.
 
-![Jenkins Architecture](https://miro.medium.com/max/1400/1*TL5hGsFZkt9nJmw-H9DNMg.png)
+<p align="center">
+  <img src="https://www.edureka.co/blog/wp-content/uploads/2019/07/Jenkins-Architecture-Jenkins-Edureka.png" alt="Jenkins Architecture" width="600" />
+</p>
 
 > **Master (Controller)**  
-> - Orchestrates the tasks  
-> - Schedules jobs, manages agents, monitors builds  
+> - Orchestrates the tasks.  
+> - Manages project configuration.  
+> - Assigns builds to agents.
 
-> **Agent (Node/Slave)**  
-> - Executes the tasks assigned by the master  
-> - Helps in load balancing
+> **Agent (Node)**  
+> - Executes the tasks like building, testing, and deployment.
+
+> **Executor**  
+> - A slot on the agent where a build runs.
 
 ---
 
 ## Basic Jenkins Terminology
 
 > **Job / Project**  
-> A task like building, testing, or deploying software.
+> A task like building code, running tests, or deploying an application.
 
 > **Build**  
-> A single run of a project.
+> The actual execution instance of a job.
 
 > **Pipeline**  
-> A suite of plugins that supports integrating and implementing continuous delivery pipelines.
-
-> **Executor**  
-> A computational slot on an agent where a job runs.
+> Defines the entire build, test, and deploy workflow as code.
 
 > **Plugin**  
-> A module that extends Jenkins' capabilities.
+> Extensions that add new features to Jenkins.
+
+> **Workspace**  
+> The directory where Jenkins stores files related to a job.
 
 ---
 
 ## Typical Jenkins Workflow
 
-```plaintext
-1. Developer pushes code to Version Control (e.g., GitHub).
-2. Jenkins detects code changes (via webhook or polling).
-3. Jenkins pulls the latest code.
-4. Jenkins builds the application.
+1. Developer pushes code to a Git repository (GitHub, GitLab, Bitbucket).
+2. Jenkins detects the change via Webhooks or Poll SCM.
+3. Jenkins pulls the updated code.
+4. Jenkins builds the code.
 5. Jenkins runs tests.
-6. Jenkins deploys the build to the server (if successful).
-7. Jenkins notifies the team (via email, Slack, etc.).
+6. Jenkins deploys the build to a server or cloud.
+
+---
+
+## Best Practices
+
+> **Use Pipelines as Code**  
+> Define pipelines in `Jenkinsfile` for better version control.
+
+> **Limit Plugins**  
+> Only use necessary plugins to keep Jenkins lightweight and secure.
+
+> **Secure Jenkins**  
+> Use authentication, authorization, and always configure security settings properly.
+
+> **Use Backup and Restore Plugins**  
+> Regularly back up Jenkins configurations and jobs.
+
+> **Use Distributed Builds**  
+> Set up multiple agents to distribute the load and speed up builds.
+
+---
+
+## Useful Resources
+- [Official Jenkins Documentation](https://www.jenkins.io/doc/)
+- [Jenkins GitHub Repository](https://github.com/jenkinsci/jenkins)
+- [Jenkins Plugins Index](https://plugins.jenkins.io/)
