@@ -22,7 +22,7 @@ Jenkins is an open-source automation server used to automate parts of software d
 It helps implement Continuous Integration and Continuous Delivery (CI/CD) pipelines.
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/320px-Jenkins_logo.svg.png" alt="Jenkins Logo" width="110" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/320px-Jenkins_logo.svg.png" alt="Jenkins Logo" width="90" />
 </p>
 
 ---
